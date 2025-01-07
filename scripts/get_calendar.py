@@ -1,0 +1,21 @@
+"""Writes the calendar data for a given year to a JSON file."""
+
+import json
+from pathlib import Path
+
+from app.logger import LOGGER
+from app.web_scraping.event_extraction import get_event_data_for_year
+
+years = map(str, range(2024, 2026))
+
+for year in years:
+    events_data = get_event_data_for_year(year=year)
+
+    output_file_path = f"data/{year}/{year}_calendar.json"
+
+    Path(output_file_path).parent.mkdir(parents=True, exist_ok=True)
+
+    with Path(output_file_path).open("w") as json_file:
+        json.dump(events_data, json_file, indent=4)
+
+    LOGGER.info(f"Calendar data for {year} has been written to {output_file_path}")
