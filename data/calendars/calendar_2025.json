@@ -1,0 +1,80 @@
+[
+    {
+        "round": 1,
+        "name": "THA",
+        "url_value": "tha",
+        "displayed_text": "THAILAND"
+    },
+    {
+        "round": 2,
+        "name": "ARG",
+        "url_value": "arg",
+        "displayed_text": "ARGENTINA"
+    },
+    {
+        "round": 3,
+        "name": "AME",
+        "url_value": "ame",
+        "displayed_text": "USA"
+    },
+    {
+        "round": 4,
+        "name": "QAT",
+        "url_value": "qat",
+        "displayed_text": "QATAR"
+    },
+    {
+        "round": 5,
+        "name": "SPA",
+        "url_value": "spa",
+        "displayed_text": "SPAIN"
+    },
+    {
+        "round": 6,
+        "name": "FRA",
+        "url_value": "fra",
+        "displayed_text": "FRANCE"
+    },
+    {
+        "round": 7,
+        "name": "GBR",
+        "url_value": "gbr",
+        "displayed_text": "UNITED KINGDOM"
+    },
+    {
+        "round": 8,
+        "name": "ARA",
+        "url_value": "ara",
+        "displayed_text": "ARAGON"
+    },
+    {
+        "round": 9,
+        "name": "ITA",
+        "url_value": "ita",
+        "displayed_text": "ITALY"
+    },
+    {
+        "round": 10,
+        "name": "NED",
+        "url_value": "ned",
+        "displayed_text": "NETHERLANDS"
+    },
+    {
+        "round": 11,
+        "name": "GER",
+        "url_value": "ger",
+        "displayed_text": "GERMANY"
+    },
+    {
+        "round": 12,
+        "name": "CZE",
+        "url_value": "cze",
+        "displayed_text": "CZECHIA"
+    },
+    {
+        "round": 13,
+        "name": "AUT",
+        "url_value": "aut",
+        "displayed_text": "AUSTRIA"
+    }
+]
