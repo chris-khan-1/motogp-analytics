@@ -1,0 +1,200 @@
+[
+    {
+        "position": 1,
+        "rider": "Marco Bezzecchi",
+        "points": 25,
+        "average_speed": 175.7,
+        "gap_to_first": "0.000",
+        "total_time": "38:16.037",
+        "total_laps": 19
+    },
+    {
+        "position": 2,
+        "rider": "Johann Zarco",
+        "points": 20,
+        "average_speed": 175.4,
+        "gap_to_first": "4.088",
+        "total_time": "38:20.125",
+        "total_laps": 19
+    },
+    {
+        "position": 3,
+        "rider": "Marc Marquez",
+        "points": 16,
+        "average_speed": 175.3,
+        "gap_to_first": "5.929",
+        "total_time": "38:21.966",
+        "total_laps": 19
+    },
+    {
+        "position": 4,
+        "rider": "Franco Morbidelli",
+        "points": 13,
+        "average_speed": 175.3,
+        "gap_to_first": "5.946",
+        "total_time": "38:21.983",
+        "total_laps": 19
+    },
+    {
+        "position": 5,
+        "rider": "Alex Marquez",
+        "points": 11,
+        "average_speed": 175.3,
+        "gap_to_first": "6.024",
+        "total_time": "38:22.061",
+        "total_laps": 19
+    },
+    {
+        "position": 6,
+        "rider": "Pedro Acosta",
+        "points": 10,
+        "average_speed": 175.2,
+        "gap_to_first": "7.109",
+        "total_time": "38:23.146",
+        "total_laps": 19
+    },
+    {
+        "position": 7,
+        "rider": "Jack Miller",
+        "points": 9,
+        "average_speed": 175.1,
+        "gap_to_first": "7.398",
+        "total_time": "38:23.435",
+        "total_laps": 19
+    },
+    {
+        "position": 8,
+        "rider": "Fermin Aldeguer",
+        "points": 8,
+        "average_speed": 175.1,
+        "gap_to_first": "8.584",
+        "total_time": "38:24.621",
+        "total_laps": 19
+    },
+    {
+        "position": 9,
+        "rider": "Fabio Di Giannantonio",
+        "points": 7,
+        "average_speed": 175,
+        "gap_to_first": "9.764",
+        "total_time": "38:25.801",
+        "total_laps": 19
+    },
+    {
+        "position": 10,
+        "rider": "Joan Mir",
+        "points": 6,
+        "average_speed": 174.9,
+        "gap_to_first": "10.320",
+        "total_time": "38:26.357",
+        "total_laps": 19
+    },
+    {
+        "position": 11,
+        "rider": "Maverick Vi\u00f1ales",
+        "points": 5,
+        "average_speed": 174.9,
+        "gap_to_first": "11.318",
+        "total_time": "38:27.355",
+        "total_laps": 19
+    },
+    {
+        "position": 12,
+        "rider": "Raul Fernandez",
+        "points": 4,
+        "average_speed": 174.5,
+        "gap_to_first": "16.175",
+        "total_time": "38:32.212",
+        "total_laps": 19
+    },
+    {
+        "position": 13,
+        "rider": "Alex Rins",
+        "points": 3,
+        "average_speed": 174.5,
+        "gap_to_first": "16.312",
+        "total_time": "38:32.349",
+        "total_laps": 19
+    },
+    {
+        "position": 14,
+        "rider": "Brad Binder",
+        "points": 2,
+        "average_speed": 174.5,
+        "gap_to_first": "16.262",
+        "total_time": "38:32.299",
+        "total_laps": 19
+    },
+    {
+        "position": 15,
+        "rider": "Luca Marini",
+        "points": 1,
+        "average_speed": 175.1,
+        "gap_to_first": "23.729",
+        "total_time": "38:39.766",
+        "total_laps": 19
+    },
+    {
+        "position": 16,
+        "rider": "Miguel Oliveira",
+        "points": 0,
+        "average_speed": 173.3,
+        "gap_to_first": "31.641",
+        "total_time": "38:47.678",
+        "total_laps": 19
+    },
+    {
+        "position": 17,
+        "rider": "Enea Bastianini",
+        "points": 0,
+        "average_speed": 172.8,
+        "gap_to_first": "54.225",
+        "total_time": "39:10.262",
+        "total_laps": 19
+    },
+    {
+        "position": 18,
+        "rider": "Lorenzo Savadori",
+        "points": 0,
+        "average_speed": 172.7,
+        "gap_to_first": "56.488",
+        "total_time": "39:12.525",
+        "total_laps": 19
+    },
+    {
+        "position": 19,
+        "rider": "Somkiat Chantra",
+        "points": 0,
+        "average_speed": 172,
+        "gap_to_first": "64.884",
+        "total_time": "39:20.921",
+        "total_laps": 19
+    },
+    {
+        "position": null,
+        "rider": "Fabio Quartararo",
+        "points": 0,
+        "average_speed": 172.8,
+        "gap_to_first": null,
+        "total_time": "24:34.718",
+        "total_laps": 12
+    },
+    {
+        "position": null,
+        "rider": "Aleix Espargaro",
+        "points": 0,
+        "average_speed": 163.3,
+        "gap_to_first": null,
+        "total_time": "06:30.109",
+        "total_laps": 3
+    },
+    {
+        "position": null,
+        "rider": "Francesco Bagnaia",
+        "points": 0,
+        "average_speed": 172.3,
+        "gap_to_first": null,
+        "total_time": "06:09.643",
+        "total_laps": 3
+    }
+]
