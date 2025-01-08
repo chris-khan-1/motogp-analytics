@@ -49,11 +49,24 @@ def extract_event_data(driver: webdriver.Chrome) -> list[dict]:
     )
     event_dropdown = Select(webelement=event_type_selector)
 
+    WebDriverWait(driver=driver, timeout=10).until(
+        method=EC.presence_of_all_elements_located(
+            locator=(
+                By.CSS_SELECTOR,
+                (
+                    ".primary-filter__filter-select.primary-filter__filter-select--event"
+                    " option"
+                ),
+            )
+        )
+    )
+
     event_options = event_dropdown.options
 
     events_data = []
-    for option in event_options:
+    for i, option in enumerate(event_options[::-1]):
         event = {
+            "race": i + 1,
             "name": option.get_attribute("name"),
             "value": option.get_attribute("value"),
             "displayed_text": option.text,
