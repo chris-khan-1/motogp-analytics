@@ -1,0 +1,122 @@
+[
+    {
+        "round": 1,
+        "displayed_text": "QATAR",
+        "name": "QAT",
+        "value": "qat"
+    },
+    {
+        "round": 2,
+        "displayed_text": "PORTUGAL",
+        "name": "POR",
+        "value": "por"
+    },
+    {
+        "round": 3,
+        "displayed_text": "USA",
+        "name": "AME",
+        "value": "ame"
+    },
+    {
+        "round": 4,
+        "displayed_text": "SPAIN",
+        "name": "SPA",
+        "value": "spa"
+    },
+    {
+        "round": 5,
+        "displayed_text": "FRANCE",
+        "name": "FRA",
+        "value": "fra"
+    },
+    {
+        "round": 6,
+        "displayed_text": "CATALONIA",
+        "name": "CAT",
+        "value": "cat"
+    },
+    {
+        "round": 7,
+        "displayed_text": "ITALY",
+        "name": "ITA",
+        "value": "ita"
+    },
+    {
+        "round": 8,
+        "displayed_text": "NETHERLANDS",
+        "name": "NED",
+        "value": "ned"
+    },
+    {
+        "round": 9,
+        "displayed_text": "GERMANY",
+        "name": "GER",
+        "value": "ger"
+    },
+    {
+        "round": 10,
+        "displayed_text": "UNITED KINGDOM",
+        "name": "GBR",
+        "value": "gbr"
+    },
+    {
+        "round": 11,
+        "displayed_text": "AUSTRIA",
+        "name": "AUT",
+        "value": "aut"
+    },
+    {
+        "round": 12,
+        "displayed_text": "ARAGON",
+        "name": "ARA",
+        "value": "ara"
+    },
+    {
+        "round": 13,
+        "displayed_text": "SAN MARINO",
+        "name": "RSM",
+        "value": "rsm"
+    },
+    {
+        "round": 14,
+        "displayed_text": "EMILIA-ROMAGNA",
+        "name": "EMI",
+        "value": "emi"
+    },
+    {
+        "round": 15,
+        "displayed_text": "INDONESIA",
+        "name": "INA",
+        "value": "ina"
+    },
+    {
+        "round": 16,
+        "displayed_text": "JAPAN",
+        "name": "JPN",
+        "value": "jpn"
+    },
+    {
+        "round": 17,
+        "displayed_text": "AUSTRALIA",
+        "name": "AUS",
+        "value": "aus"
+    },
+    {
+        "round": 18,
+        "displayed_text": "THAILAND",
+        "name": "THA",
+        "value": "tha"
+    },
+    {
+        "round": 19,
+        "displayed_text": "MALAYSIA",
+        "name": "MAL",
+        "value": "mal"
+    },
+    {
+        "round": 20,
+        "displayed_text": "SOLIDARITY",
+        "name": "SLD",
+        "value": "sld"
+    }
+]

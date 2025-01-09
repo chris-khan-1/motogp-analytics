@@ -66,9 +66,9 @@ def extract_event_data(driver: webdriver.Chrome) -> list[dict]:
     events_data = []
     for i, option in enumerate(event_options[::-1]):
         event = {
-            "race": i + 1,
+            "round": i + 1,
             "name": option.get_attribute("name"),
-            "value": option.get_attribute("value"),
+            "url_value": option.get_attribute("value"),
             "displayed_text": option.text,
         }
         events_data.append(event)
