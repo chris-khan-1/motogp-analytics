@@ -19,8 +19,7 @@ def setup_chrome_driver() -> webdriver.Chrome:
     chrome_options.add_argument("--disable-usb")
 
     service = Service()
-    driver = webdriver.Chrome(service=service, options=chrome_options)
-    return driver
+    return webdriver.Chrome(service=service, options=chrome_options)
 
 
 def select_element_by_value(

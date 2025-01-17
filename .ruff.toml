@@ -5,10 +5,23 @@ docstring-code-format = true
 
 [lint]
 select = [
-    "E",  # pycodestyle
-    "F",  # Pyflakes
-    "UP",  # pyupgrade
-    "B",  # flake8-bugbear
+    "A",    # flake8-builtins
+    "ARG",  # flake8-unused-arguments
+    "B",    # flake8-bugbear
+    "E",    # pycodestyle
+    #"ERA",  # eradicate
+    "F",    # Pyflakes
+    "I",    # isort
+    "PT",   # flake8-pytest-style
+    "PTH",  # flake8-use-pathlib
+    "RET",  # flake8-return
+    "S",    # flake8-bandit
     "SIM",  # flake8-simplify
-    "I",  # isort
+    "T20",  # flake8-print
+    "TD",   # flake8-todos
+    "UP",   # pyupgrade
 ]
+
+[lint.per-file-ignores]
+# allow assert in tests
+"tests/*" = ["S101"]
