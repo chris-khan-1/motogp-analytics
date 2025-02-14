@@ -79,36 +79,30 @@ def get_event_data_for_year(year: str) -> list[dict]:
     logging.basicConfig(level=logging.INFO)
     logger = logging.getLogger(name=__name__)
 
-    try:
-        driver = setup_chrome_driver()
-        logger.info("Chrome WebDriver initialised.")
+    driver = setup_chrome_driver()
+    logger.info("Chrome WebDriver initialised.")
 
-        driver.get(url="https://www.motogp.com/en/gp-results")
-        logger.info("Navigated to MotoGP results page.")
+    driver.get(url="https://www.motogp.com/en/gp-results")
+    logger.info("Navigated to MotoGP results page.")
 
-        # select year
-        select_element_by_value(
-            driver=driver, selector=".primary-filter__filter-select--year", value=year
-        )
+    # select year
+    select_element_by_value(
+        driver=driver, selector=".primary-filter__filter-select--year", value=year
+    )
 
-        # select GP event type
-        select_element_by_value(
-            driver=driver,
-            selector=".primary-filter__filter-select.primary-filter__filter-select--type",
-            value="GP",
-        )
+    # select GP event type
+    select_element_by_value(
+        driver=driver,
+        selector=".primary-filter__filter-select.primary-filter__filter-select--type",
+        value="GP",
+    )
 
-        logger.info(f"Selected year: {year} and event type: GP.")
+    logger.info(f"Selected year: {year} and event type: GP.")
 
-        events_data = extract_event_data(driver=driver)
-        logger.info("Event data extracted successfully.")
+    events_data = extract_event_data(driver=driver)
+    logger.info("Event data extracted successfully.")
 
-    except Exception as e:
-        logger.error(f"An error occurred: {e}")
-        events_data = []
-
-    finally:
-        driver.quit()
-        logger.info("Browser closed.")
+    driver.quit()
+    logger.info("Browser closed.")
 
     return events_data

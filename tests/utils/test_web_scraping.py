@@ -1,4 +1,4 @@
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock, call, patch
 
 import pytest
 from selenium.common.exceptions import TimeoutException
@@ -8,6 +8,7 @@ from selenium.webdriver.support.ui import Select
 
 from app.utils.web_scraping import (
     extract_event_data,
+    get_event_data_for_year,
     select_element_by_value,
     setup_chrome_driver,
 )
@@ -152,3 +153,45 @@ class TestExtractEventData:
 
         with pytest.raises(TimeoutException):
             extract_event_data(driver=mock_driver)
+
+
+class TestGetEventDataForYear:
+    @patch("app.utils.web_scraping.setup_chrome_driver")
+    @patch("app.utils.web_scraping.select_element_by_value")
+    @patch("app.utils.web_scraping.extract_event_data")
+    def test_get_event_data_for_year_successful_execution(
+        self,
+        mock_extract_event_data,
+        mock_select_element_by_value,
+        mock_setup_chrome_driver,
+    ):
+        mock_driver = MagicMock()
+        mock_setup_chrome_driver.return_value = mock_driver
+
+        # invoking the function here
+        get_event_data_for_year(year="2023")
+
+        mock_setup_chrome_driver.assert_called_once()
+
+        mock_driver.get.assert_called_once_with(
+            url="https://www.motogp.com/en/gp-results"
+        )
+
+        mock_select_element_by_value.assert_has_calls(
+            [
+                call(
+                    driver=mock_driver,
+                    selector=".primary-filter__filter-select--year",
+                    value="2023",
+                ),
+                call(
+                    driver=mock_driver,
+                    selector=".primary-filter__filter-select.primary-filter__filter-select--type",
+                    value="GP",
+                ),
+            ],
+        )
+
+        mock_extract_event_data.assert_called_once_with(driver=mock_driver)
+
+        mock_driver.quit.assert_called_once()
