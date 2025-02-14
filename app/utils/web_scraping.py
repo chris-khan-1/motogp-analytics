@@ -60,10 +60,8 @@ def extract_event_data(driver: webdriver.Chrome) -> list[dict]:
         )
     )
 
-    event_options = event_dropdown.options
-
     events_data = []
-    for i, option in enumerate(event_options[::-1]):
+    for i, option in enumerate(event_dropdown.options[::-1]):  # reverse option order
         event = {
             "round": i + 1,
             "name": option.get_attribute("name"),
