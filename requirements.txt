@@ -1,9 +1,10 @@
 beautifulsoup4==4.12.3
+mypy==1.11.2
+pdfplumber==0.11.7
 polars==1.19.0
+pre_commit==4.0.1
+pytest==8.3.1
 requests==2.32.3
-selenium
 
 ruff==0.8.6
-pre_commit==4.0.1
-mypy==1.11.2
-pytest==8.3.1
+selenium==4.34.2

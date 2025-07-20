@@ -6,7 +6,7 @@ from pathlib import Path
 
 from app.utils.web_scraping import get_event_data_for_year
 
-years = map(str, range(2000, 2024))
+years = map(str, range(2024, 2024))
 
 for year in years:
     events_data = get_event_data_for_year(year=year)
