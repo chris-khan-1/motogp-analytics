@@ -35,62 +35,71 @@ def split_classified_and_non_classified(text: str) -> tuple[list[str], list[str]
     return classified, non_classified
 
 
-def extract_classified_rider_race_results(
-    classified_rider_race_info: list[str],
-) -> list[dict]:
-    results = []
-    for line in classified_rider_race_info:
-        parts = line.split()
-        results.append(
-            {
-                "position": int(parts[0]),
-                "points": int(parts[1]),
-                "rider_number": int(parts[2]),
-                # "rider": rider,
-                # "nation": nation,
-                # "team": team,
-                # "bike": bike,
-                # "total_time": total_time,
-                # "kmh": kmh,
-                # "gap": gap if gap != "-" else None,
-            }
-        )
-    return results
+def extract_classified_rider_race_results(classified_rider_race_info: str) -> dict:
+    parts = classified_rider_race_info.split()
+
+    position = parts[0]
+    points = parts[1]
+    rider_number = parts[2]
+
+    # Find the index of the nation code (3 uppercase letters)
+    nation_idx = next(i for i, p in enumerate(parts) if len(p) == 3 and p.isupper())
+
+    # Rider name is from index 3 to before the nation code
+    rider_name = " ".join(parts[3:nation_idx])
+    nation = parts[nation_idx]
+
+    # Motorcycle manufacturer is the last ALL CAPS word before the time
+    time_idx = next(i for i, p in enumerate(parts) if "'" in p)
+    manufacturer_idx = time_idx - 1
+
+    team_name = " ".join(parts[nation_idx + 1 : manufacturer_idx])
+    motorcycle = parts[manufacturer_idx]
+
+    total_time = parts[time_idx]
+    speed = parts[time_idx + 1]
+
+    gap = " ".join(parts[time_idx + 2 :]) if time_idx + 2 < len(parts) else None
+
+    return {
+        "position": int(position),
+        "points": int(points),
+        "rider_number": int(rider_number),
+        "rider": rider_name,
+        "nation": nation,
+        "team": team_name,
+        "bike": motorcycle,
+        "total_time": total_time,
+        "kmh": float(speed),
+        "gap": gap,
+    }
 
 
-def extract_non_classified_rider_race_results(
-    classified_rider_race_info: list[str],
-) -> list[dict]:
-    results = []
-    for line in classified_rider_race_info:
-        parts = line.split()
-        results.append(
-            {
-                "position": None,
-                "points": None,
-                "rider_number": int(parts[0]),
-                # "rider": rider,
-                # "nation": nation,
-                # "team": team,
-                # "bike": bike,
-                # "total_time": total_time,
-                # "kmh": kmh,
-                # "gap": gap if gap != "-" else None,
-            }
-        )
-    return results
+# def extract_non_classified_rider_race_results(
+#     classified_rider_race_info: list[str],
+# ) -> list[dict]:
+#     results = []
+#     for line in classified_rider_race_info:
+#         parts = line.split()
+#         results.append(
+#             {
+#                 "position": None,
+#                 "points": None,
+#                 "rider_number": int(parts[0]),
+#                 # "rider": rider,
+#                 "nation": extract_nation_code(parts=parts),
+#                 # "team": team,
+#                 # "bike": bike,
+#                 # "total_time": total_time,
+#                 # "kmh": kmh,
+#                 # "gap": gap if gap != "-" else None,
+#             }
+#         )
+#     return results
 
 
 def extract_race_results_from_text(text: str) -> list[dict]:
     pass
-
-
-def find_nation_index(parts: list[str], start_idx: int) -> int | None:
-    """Find index of three-letter nation code."""
-    for i in range(start_idx, len(parts)):
-        if len(parts[i]) == 3 and parts[i].isupper():
-            return i
-    return None
 
 
 # def find_bike_index(parts: list[str], start_idx: int, end_idx: int) -> int | None:
