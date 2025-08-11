@@ -1,3 +1,168 @@
+from textwrap import dedent
+
+from app.utils.pdf_extraction import (
+    extract_classified_rider_race_results,
+    extract_non_classified_rider_race_results,
+    extract_race_results_from_text,
+    find_nation_index,
+    split_classified_and_non_classified,
+)
+
+
+def test_split_classified_and_non_classified():
+    input_text = dedent("""\
+                    Some
+                    Irrelevant
+                    Information
+                    Pos Pts # Rider Nation Team Motorcycle Total Time Km/h Gap
+                    1 25 93 Marc MARQUEZ SPA Ducati Lenovo Team DUCATI 40'04.628 169.8
+                    2 20 72 Marco BEZZECCHI ITA Aprilia Racing APRILIA 40'06.381 169.7 1.753
+                    Not classified
+                    23 Enea BASTIANINI ITA Red Bull KTM Tech3 KTM 11'33.792 168.2 15 laps
+                    More
+                    Irrelevant
+                    Information
+                    """)
+
+    actual_classified, actual_non_classified = split_classified_and_non_classified(
+        text=input_text
+    )
+
+    assert actual_classified == [
+        "1 25 93 Marc MARQUEZ SPA Ducati Lenovo Team DUCATI 40'04.628 169.8",
+        "2 20 72 Marco BEZZECCHI ITA Aprilia Racing APRILIA 40'06.381 169.7 1.753",
+    ]
+    assert actual_non_classified == [
+        "23 Enea BASTIANINI ITA Red Bull KTM Tech3 KTM 11'33.792 168.2 15 laps"
+    ]
+
+
+def test_find_nation_index():
+    parts = ["Marc", "MARQUEZ", "SPA", "Team"]
+    assert find_nation_index(parts, 0) == 2
+
+
+def test_extract_classified_rider_race_results():
+    input_info = [
+        "1 25 93 Marc MARQUEZ SPA Ducati Lenovo Team DUCATI 40'04.628 169.8",
+        "2 20 72 Marco BEZZECCHI ITA Aprilia Racing APRILIA 40'06.381 169.7 1.753",
+    ]
+    expected = [
+        {
+            "position": 1,
+            "points": 25,
+            "rider_number": 93,
+            # "rider": "Marc MARQUEZ",
+            # "nation": "SPA",
+            # "team": "Ducati Lenovo Team",
+            # "bike": "DUCATI",
+            # "total_time": "40'04.628",
+            # "kmh": 169.8,
+            # "gap": None,
+        },
+        {
+            "position": 2,
+            "points": 20,
+            "rider_number": 72,
+            # "rider": "Marco BEZZECCHI",
+            # "nation": "ITA",
+            # "team": "Aprilia Racing",
+            # "bike": "APPRILIA",
+            # "total_time": "40'06.381",
+            # "kmh": 169.7,
+            # "gap": "1.753",
+        },
+    ]
+
+    actual = extract_classified_rider_race_results(
+        classified_rider_race_info=input_info
+    )
+    assert actual == expected
+
+
+def test_extract_non_classified_rider_race_results():
+    input_info = [
+        "23 Enea BASTIANINI ITA Red Bull KTM Tech3 KTM 11'33.792 168.2 15 laps"
+    ]
+    expected = [
+        {
+            "position": None,
+            "points": None,
+            "rider_number": 23,
+            # "rider": "Marc MARQUEZ",
+            # "nation": "SPA",
+            # "team": "Ducati Lenovo Team",
+            # "bike": "DUCATI",
+            # "total_time": "40'04.628",
+            # "kmh": 169.8,
+            # "gap": None,
+        },
+    ]
+
+    actual = extract_non_classified_rider_race_results(
+        classified_rider_race_info=input_info
+    )
+
+    assert actual == expected
+
+
+# def test_extract_results_full():
+#     input_text = dedent("""\
+#                     Some
+#                     Irrelevant
+#                     Information
+#                     Pos Pts # Rider Nation Team Motorcycle Total Time Km/h Gap
+#                     1 25 93 Marc MARQUEZ SPA Ducati Lenovo Team DUCATI 40'04.628 169.8
+#                     2 20 72 Marco BEZZECCHI ITA Aprilia Racing APRILIA 40'06.381 169.7 1.753
+#                     Not classified
+#                     23 Enea BASTIANINI ITA Red Bull KTM Tech3 KTM 11'33.792 168.2 15 laps
+#                     More
+#                     Irrelevant
+#                     Information
+#                     """)
+
+#     actual = extract_race_results_from_text(text=input_text)
+
+#     assert actual == [
+#         {
+#             "position": 1,
+#             "points": 25,
+#             "rider_number": 93,
+#             "rider": "Marc MARQUEZ",
+#             # "nation": "SPA",
+#             # "team": "Ducati Lenovo Team",
+#             # "bike": "DUCATI",
+#             # "total_time": "40'04.628",
+#             # "kmh": 169.8,
+#             # "gap": None,
+#         },
+#         {
+#             "position": 2,
+#             "points": 20,
+#             "rider_number": 72,
+#             "rider": "Marco BEZZECCHI",
+#             # "nation": "ITA",
+#             # "team": "Aprilia Racing",
+#             # "bike": "APPRILIA",
+#             # "total_time": "40'06.381",
+#             # "kmh": 169.7,
+#             # "gap": "1.753",
+#         },
+#         {
+#             "position": None,
+#             "points": None,
+#             "number": 23,
+#             "rider": "Enea BASTIANINI",
+#             # "nation": "ITA",
+#             # "team": "Red Bull KTM Tech3",
+#             # "bike": "KTM",
+#             # "total_time": "11'33.792",
+#             # "kmh": 168.2,
+#             # "gap": "15 laps",
+#         },
+#     ]
+
+
 # @pytest.fixture
 # def classified_rider():
 #     return [
@@ -31,12 +196,6 @@
 #         "167.5",
 #         "31.000",
 #     ]
-
-
-# def test_find_nation_index():
-#     parts = ["Marc", "MARQUEZ", "SPA", "Team"]
-#     assert find_nation_index(parts, 0) == 2
-#     assert find_nation_index(parts, 3) is None
 
 
 # def test_find_bike_index():
