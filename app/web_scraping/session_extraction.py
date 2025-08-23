@@ -72,7 +72,7 @@ def write_session_data(
         json.dump(data, f, indent=4)
 
 
-def main(year: str, event: str, session: str) -> None:
+def extract_and_write_session_data(year: str, event: str, session: str) -> None:
     base_url = "https://www.motogp.com/en/gp-results"
     full_url = f"{base_url}/{year}/{event}/motogp/{session}/classification"
     captured_url = get_motogp_classification_url(url=full_url)

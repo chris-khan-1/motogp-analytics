@@ -76,5 +76,11 @@
         "name": "AUT",
         "url_value": "aut",
         "displayed_text": "AUSTRIA"
+    },
+    {
+        "round": 14,
+        "name": "HUN",
+        "url_value": "hun",
+        "displayed_text": "HUNGARY"
     }
 ]

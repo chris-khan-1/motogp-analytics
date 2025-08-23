@@ -4,9 +4,9 @@ import pytest
 
 from app.web_scraping.session_extraction import (
     MOTOGP_SESSION_CLASSIFICATION_PREFIX,
+    extract_and_write_session_data,
     format_race_data,
     get_motogp_classification_url,
-    main,
 )
 
 _PATCH_BASE_PATH = "app.web_scraping.session_extraction"
@@ -94,7 +94,7 @@ def test_main_with_race_session(
     mock_get_motogp_classification_url,
 ):
     mock_get_motogp_classification_url.return_value = "The classidication URL"
-    main(year="2025", event="spa", session="rac")
+    extract_and_write_session_data(year="2025", event="spa", session="rac")
 
     mock_get_motogp_classification_url.assert_called_once_with(
         url="https://www.motogp.com/en/gp-results/2025/spa/motogp/rac/classification"

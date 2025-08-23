@@ -6,12 +6,12 @@ from pathlib import Path
 
 from app.web_scraping.event_extraction import get_event_data_for_year
 
-years = map(str, range(2025, 2026))
+years = map(str, range(2024, 2026))
 
 for year in years:
     events_data = get_event_data_for_year(year=year)
 
-    output_file_path = f"data/calendars/calendar_{year}.json"
+    output_file_path = f"data/calendars/{year}_calendar.json"
 
     with Path(output_file_path).open("w") as json_file:
         json.dump(events_data, json_file, indent=4)

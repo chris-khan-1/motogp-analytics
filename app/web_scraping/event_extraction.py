@@ -45,14 +45,11 @@ def extract_event_data(driver: webdriver.Chrome) -> list[dict[str, str | int | N
 def get_event_data_for_year(year: str) -> list[dict[str, str | int | None]]:
     """Get event data for a given year."""
 
-    logging.basicConfig(level=logging.INFO)
-    logger = logging.getLogger(name=__name__)
-
     driver = setup_chrome_driver()
-    logger.info("Chrome WebDriver initialised.")
+    logging.info("Chrome WebDriver initialised.")
 
     driver.get(url="https://www.motogp.com/en/gp-results")
-    logger.info("Navigated to MotoGP results page.")
+    logging.info("Navigated to MotoGP results page.")
 
     # select year
     select_element_by_value(
@@ -66,12 +63,12 @@ def get_event_data_for_year(year: str) -> list[dict[str, str | int | None]]:
         value="GP",
     )
 
-    logger.info(f"Selected year: {year} and event type: GP.")
+    logging.info(f"Selected year: {year} and event type: GP.")
 
     events_data = extract_event_data(driver=driver)
-    logger.info("Event data extracted successfully.")
+    logging.info("Event data extracted successfully.")
 
     driver.quit()
-    logger.info("Browser closed.")
+    logging.info("Browser closed.")
 
     return events_data
