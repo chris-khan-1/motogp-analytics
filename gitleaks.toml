@@ -1,0 +1,4 @@
+[allowlist]
+paths = [
+    "tests/test_data/example_raw_q1_output.json"
+]
