@@ -139,4 +139,4 @@ def extract_and_write_session_data(
         raise ValueError(f"Session type '{session}' is not recognised.")
 
     write_session_data(data=formatted_data, output_file_path=output_file_path)
-    LOGGER.info(f"Session data written to {output_file_path}")
+    LOGGER.info(f"Round {round_number} session data written to {output_file_path}")

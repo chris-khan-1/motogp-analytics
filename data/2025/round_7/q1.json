@@ -1,0 +1,98 @@
+[
+    {
+        "position": 1,
+        "rider": "Luca Marini",
+        "best_lap_time": "01:58.209",
+        "gap_to_first": "0.000",
+        "gap_to_previous": "0.000",
+        "total_laps": 7
+    },
+    {
+        "position": 2,
+        "rider": "Franco Morbidelli",
+        "best_lap_time": "01:58.299",
+        "gap_to_first": "0.090",
+        "gap_to_previous": "0.090",
+        "total_laps": 7
+    },
+    {
+        "position": 3,
+        "rider": "Joan Mir",
+        "best_lap_time": "01:58.322",
+        "gap_to_first": "0.113",
+        "gap_to_previous": "0.023",
+        "total_laps": 7
+    },
+    {
+        "position": 4,
+        "rider": "Pedro Acosta",
+        "best_lap_time": "01:58.536",
+        "gap_to_first": "0.327",
+        "gap_to_previous": "0.214",
+        "total_laps": 7
+    },
+    {
+        "position": 5,
+        "rider": "Miguel Oliveira",
+        "best_lap_time": "01:58.539",
+        "gap_to_first": "0.330",
+        "gap_to_previous": "0.003",
+        "total_laps": 7
+    },
+    {
+        "position": 6,
+        "rider": "Raul Fernandez",
+        "best_lap_time": "01:58.734",
+        "gap_to_first": "0.525",
+        "gap_to_previous": "0.195",
+        "total_laps": 7
+    },
+    {
+        "position": 7,
+        "rider": "Enea Bastianini",
+        "best_lap_time": "01:59.158",
+        "gap_to_first": "0.949",
+        "gap_to_previous": "0.424",
+        "total_laps": 7
+    },
+    {
+        "position": 8,
+        "rider": "Maverick Vi\u00f1ales",
+        "best_lap_time": "01:59.159",
+        "gap_to_first": "0.950",
+        "gap_to_previous": "0.001",
+        "total_laps": 4
+    },
+    {
+        "position": 9,
+        "rider": "Brad Binder",
+        "best_lap_time": "01:59.288",
+        "gap_to_first": "1.079",
+        "gap_to_previous": "0.129",
+        "total_laps": 7
+    },
+    {
+        "position": 10,
+        "rider": "Lorenzo Savadori",
+        "best_lap_time": "01:59.450",
+        "gap_to_first": "1.241",
+        "gap_to_previous": "0.162",
+        "total_laps": 7
+    },
+    {
+        "position": 11,
+        "rider": "Aleix Espargaro",
+        "best_lap_time": "01:59.632",
+        "gap_to_first": "1.423",
+        "gap_to_previous": "0.182",
+        "total_laps": 7
+    },
+    {
+        "position": 12,
+        "rider": "Somkiat Chantra",
+        "best_lap_time": "02:01.030",
+        "gap_to_first": "2.821",
+        "gap_to_previous": "1.398",
+        "total_laps": 5
+    }
+]

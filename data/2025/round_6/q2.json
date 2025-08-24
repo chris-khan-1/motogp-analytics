@@ -1,0 +1,98 @@
+[
+    {
+        "position": 1,
+        "rider": "Fabio Quartararo",
+        "best_lap_time": "01:29.324",
+        "gap_to_first": "0.000",
+        "gap_to_previous": "0.000",
+        "total_laps": 9
+    },
+    {
+        "position": 2,
+        "rider": "Marc Marquez",
+        "best_lap_time": "01:29.442",
+        "gap_to_first": "0.118",
+        "gap_to_previous": "0.118",
+        "total_laps": 8
+    },
+    {
+        "position": 3,
+        "rider": "Alex Marquez",
+        "best_lap_time": "01:29.571",
+        "gap_to_first": "0.247",
+        "gap_to_previous": "0.129",
+        "total_laps": 8
+    },
+    {
+        "position": 4,
+        "rider": "Fermin Aldeguer",
+        "best_lap_time": "01:29.776",
+        "gap_to_first": "0.452",
+        "gap_to_previous": "0.205",
+        "total_laps": 6
+    },
+    {
+        "position": 5,
+        "rider": "Maverick Vi\u00f1ales",
+        "best_lap_time": "01:30.023",
+        "gap_to_first": "0.699",
+        "gap_to_previous": "0.247",
+        "total_laps": 7
+    },
+    {
+        "position": 6,
+        "rider": "Francesco Bagnaia",
+        "best_lap_time": "01:30.047",
+        "gap_to_first": "0.723",
+        "gap_to_previous": "0.024",
+        "total_laps": 9
+    },
+    {
+        "position": 7,
+        "rider": "Marco Bezzecchi",
+        "best_lap_time": "01:30.183",
+        "gap_to_first": "0.859",
+        "gap_to_previous": "0.136",
+        "total_laps": 9
+    },
+    {
+        "position": 8,
+        "rider": "Jack Miller",
+        "best_lap_time": "01:30.191",
+        "gap_to_first": "0.867",
+        "gap_to_previous": "0.008",
+        "total_laps": 7
+    },
+    {
+        "position": 9,
+        "rider": "Franco Morbidelli",
+        "best_lap_time": "01:30.198",
+        "gap_to_first": "0.874",
+        "gap_to_previous": "0.007",
+        "total_laps": 8
+    },
+    {
+        "position": 10,
+        "rider": "Raul Fernandez",
+        "best_lap_time": "01:30.385",
+        "gap_to_first": "1.061",
+        "gap_to_previous": "0.187",
+        "total_laps": 9
+    },
+    {
+        "position": 11,
+        "rider": "Johann Zarco",
+        "best_lap_time": "01:30.444",
+        "gap_to_first": "1.120",
+        "gap_to_previous": "0.059",
+        "total_laps": 8
+    },
+    {
+        "position": 12,
+        "rider": "Pedro Acosta",
+        "best_lap_time": "01:30.462",
+        "gap_to_first": "1.138",
+        "gap_to_previous": "0.018",
+        "total_laps": 9
+    }
+]

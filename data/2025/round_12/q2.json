@@ -1,0 +1,98 @@
+[
+    {
+        "position": 1,
+        "rider": "Francesco Bagnaia",
+        "best_lap_time": "01:52.303",
+        "gap_to_first": "0.000",
+        "gap_to_previous": "0.000",
+        "total_laps": 7
+    },
+    {
+        "position": 2,
+        "rider": "Marc Marquez",
+        "best_lap_time": "01:52.522",
+        "gap_to_first": "0.219",
+        "gap_to_previous": "0.219",
+        "total_laps": 5
+    },
+    {
+        "position": 3,
+        "rider": "Fabio Quartararo",
+        "best_lap_time": "01:52.608",
+        "gap_to_first": "0.305",
+        "gap_to_previous": "0.086",
+        "total_laps": 7
+    },
+    {
+        "position": 4,
+        "rider": "Marco Bezzecchi",
+        "best_lap_time": "01:52.644",
+        "gap_to_first": "0.341",
+        "gap_to_previous": "0.036",
+        "total_laps": 5
+    },
+    {
+        "position": 5,
+        "rider": "Joan Mir",
+        "best_lap_time": "01:52.763",
+        "gap_to_first": "0.460",
+        "gap_to_previous": "0.119",
+        "total_laps": 7
+    },
+    {
+        "position": 6,
+        "rider": "Raul Fernandez",
+        "best_lap_time": "01:52.796",
+        "gap_to_first": "0.493",
+        "gap_to_previous": "0.033",
+        "total_laps": 7
+    },
+    {
+        "position": 7,
+        "rider": "Pedro Acosta",
+        "best_lap_time": "01:52.830",
+        "gap_to_first": "0.527",
+        "gap_to_previous": "0.034",
+        "total_laps": 7
+    },
+    {
+        "position": 8,
+        "rider": "Alex Marquez",
+        "best_lap_time": "01:52.850",
+        "gap_to_first": "0.547",
+        "gap_to_previous": "0.020",
+        "total_laps": 6
+    },
+    {
+        "position": 9,
+        "rider": "Johann Zarco",
+        "best_lap_time": "01:52.877",
+        "gap_to_first": "0.574",
+        "gap_to_previous": "0.027",
+        "total_laps": 6
+    },
+    {
+        "position": 10,
+        "rider": "Jack Miller",
+        "best_lap_time": "01:52.980",
+        "gap_to_first": "0.677",
+        "gap_to_previous": "0.103",
+        "total_laps": 5
+    },
+    {
+        "position": 11,
+        "rider": "Enea Bastianini",
+        "best_lap_time": "01:53.317",
+        "gap_to_first": "1.014",
+        "gap_to_previous": "0.337",
+        "total_laps": 7
+    },
+    {
+        "position": 12,
+        "rider": "Jorge Martin",
+        "best_lap_time": "01:53.614",
+        "gap_to_first": "1.311",
+        "gap_to_previous": "0.297",
+        "total_laps": 6
+    }
+]
