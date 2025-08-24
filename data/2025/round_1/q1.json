@@ -1,0 +1,98 @@
+[
+    {
+        "position": 1,
+        "rider": "Francesco Bagnaia",
+        "best_lap_time": "01:29.180",
+        "gap_to_first": "0.000",
+        "gap_to_previous": "0.000",
+        "total_laps": 4
+    },
+    {
+        "position": 2,
+        "rider": "Jack Miller",
+        "best_lap_time": "01:29.186",
+        "gap_to_first": "0.006",
+        "gap_to_previous": "0.006",
+        "total_laps": 7
+    },
+    {
+        "position": 3,
+        "rider": "Fabio Di Giannantonio",
+        "best_lap_time": "01:29.237",
+        "gap_to_first": "0.057",
+        "gap_to_previous": "0.051",
+        "total_laps": 7
+    },
+    {
+        "position": 4,
+        "rider": "Brad Binder",
+        "best_lap_time": "01:29.468",
+        "gap_to_first": "0.288",
+        "gap_to_previous": "0.231",
+        "total_laps": 7
+    },
+    {
+        "position": 5,
+        "rider": "Fermin Aldeguer",
+        "best_lap_time": "01:29.484",
+        "gap_to_first": "0.304",
+        "gap_to_previous": "0.016",
+        "total_laps": 9
+    },
+    {
+        "position": 6,
+        "rider": "Luca Marini",
+        "best_lap_time": "01:29.532",
+        "gap_to_first": "0.352",
+        "gap_to_previous": "0.048",
+        "total_laps": 7
+    },
+    {
+        "position": 7,
+        "rider": "Miguel Oliveira",
+        "best_lap_time": "01:29.587",
+        "gap_to_first": "0.407",
+        "gap_to_previous": "0.055",
+        "total_laps": 7
+    },
+    {
+        "position": 8,
+        "rider": "Maverick Vi\u00f1ales",
+        "best_lap_time": "01:29.701",
+        "gap_to_first": "0.521",
+        "gap_to_previous": "0.114",
+        "total_laps": 7
+    },
+    {
+        "position": 9,
+        "rider": "Alex Rins",
+        "best_lap_time": "01:29.733",
+        "gap_to_first": "0.553",
+        "gap_to_previous": "0.032",
+        "total_laps": 8
+    },
+    {
+        "position": 10,
+        "rider": "Enea Bastianini",
+        "best_lap_time": "01:29.916",
+        "gap_to_first": "0.736",
+        "gap_to_previous": "0.183",
+        "total_laps": 8
+    },
+    {
+        "position": 11,
+        "rider": "Somkiat Chantra",
+        "best_lap_time": "01:30.076",
+        "gap_to_first": "0.896",
+        "gap_to_previous": "0.160",
+        "total_laps": 8
+    },
+    {
+        "position": 12,
+        "rider": "Lorenzo Savadori",
+        "best_lap_time": "01:30.630",
+        "gap_to_first": "1.450",
+        "gap_to_previous": "0.554",
+        "total_laps": 8
+    }
+]

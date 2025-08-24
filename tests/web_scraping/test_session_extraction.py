@@ -18,9 +18,18 @@ _PATCH_BASE_PATH = "app.web_scraping.session_extraction"
 @pytest.mark.parametrize(
     argnames="input_url",
     argvalues=[
-        "https://www.motogp.com/en/gp-results/2025/qat/moto2/q2/classification",
-        "https://www.motogp.com/en/gp-results/2025/tha/moto3/fp1/classification",
-        "https://www.motogp.com/en/gp-results/2025/por/motogp/q1/classification",
+        pytest.param(
+            "https://www.motogp.com/en/gp-results/2025/qat/moto2/q2/classification",
+            id="moto2 q2",
+        ),
+        pytest.param(
+            "https://www.motogp.com/en/gp-results/2025/tha/moto3/rac/classification",
+            id="moto3 race",
+        ),
+        pytest.param(
+            "https://www.motogp.com/en/gp-results/2025/por/motogp/spr/classification",
+            id="motogp sprint",
+        ),
     ],
 )
 def test_get_motogp_classification_url_different_races(input_url):

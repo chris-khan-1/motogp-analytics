@@ -1,19 +1,12 @@
 import json
-import os
-from concurrent.futures import ProcessPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from app.logger import LOGGER
 from app.web_scraping.session_extraction import extract_and_write_session_data
 
-year = "2025"
-session = "spr"
 
-with Path(f"data/{year}/{year}_calendar.json").open() as f:
-    calendar = json.load(f)
-
-
-def process_event(event: dict) -> None:
+def process_event(event: dict, year: str, session: str) -> None:
     return extract_and_write_session_data(
         year=year,
         event=event["url_value"],
@@ -23,10 +16,18 @@ def process_event(event: dict) -> None:
 
 
 if __name__ == "__main__":
-    max_workers = os.cpu_count()
+    year = "2025"
+    session = "q2"
 
-    with ProcessPoolExecutor(max_workers=max_workers) as executor:
-        futures = [executor.submit(process_event, event) for event in calendar]
+    max_workers = 4
+
+    with Path(f"data/{year}/{year}_calendar.json").open() as f:
+        calendar = json.load(f)
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = [
+            executor.submit(process_event, event, year, session) for event in calendar
+        ]
         for future in as_completed(futures):
             try:
                 result = future.result()
