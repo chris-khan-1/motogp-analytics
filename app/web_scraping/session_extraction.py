@@ -12,7 +12,7 @@ MOTOGP_SESSION_CLASSIFICATION_PREFIX = (
 )
 
 
-def get_motogp_classification_url(url: str) -> str | None:
+def get_motogp_classification_url(url: str) -> str:
     """
     Captures and returns the MotoGP classification API URL by intercepting network
     requests.
@@ -22,7 +22,7 @@ def get_motogp_classification_url(url: str) -> str | None:
         context = browser.new_context()
         page = context.new_page()
 
-        classification_url = None
+        classification_url: str | None = None
 
         def handle_classification_request(request: Request) -> None:
             nonlocal classification_url
@@ -38,7 +38,11 @@ def get_motogp_classification_url(url: str) -> str | None:
 
         context.close()
         browser.close()
-        return classification_url
+
+    if classification_url is None:
+        raise ValueError(f"Failed to capture classification URL for {url}")
+
+    return classification_url
 
 
 def format_race_data(data: dict) -> list[dict]:
@@ -69,6 +73,32 @@ def format_race_data(data: dict) -> list[dict]:
     return output
 
 
+def format_qualifying_data(data: dict) -> list[dict]:
+    """Formats qualifying session data into a structured list of dictionaries."""
+
+    output = []
+    for line in data["classification"]:
+        position = line["position"]
+        rider_full_name = line["rider"]["full_name"]
+        best_lap_time = line["best_lap"]["time"]
+        gap_to_first = line["gap"]["first"] if position else None
+        gap_to_previous = line["gap"]["prev"] if position else None
+        total_laps = line["total_laps"]
+
+        output.append(
+            {
+                "position": position,
+                "rider": rider_full_name,
+                "best_lap_time": best_lap_time,
+                "gap_to_first": gap_to_first,
+                "gap_to_previous": gap_to_previous,
+                "total_laps": total_laps,
+            }
+        )
+
+    return output
+
+
 def write_session_data(
     data: list[dict], output_file_path: str
 ) -> None:  # pragma: no cover
@@ -89,20 +119,24 @@ def extract_and_write_session_data(
     full_url = f"{base_url}/{year}/{event}/motogp/{session}/classification"
     captured_url = get_motogp_classification_url(url=full_url)
 
-    if captured_url:
-        data = requests.get(url=captured_url, timeout=10).json()
-    else:
-        raise ValueError(f"Failed to capture classification URL for {full_url}")
+    base_output_path = f"data/{year}/round_{round_number}"
+
+    data = requests.get(url=captured_url, timeout=10).json()
 
     if session == SessionType.RACE.url_value:
-        output_file_path = f"data/{year}/round_{round_number}/{SessionType.RACE}.json"
+        output_file_path = f"{base_output_path}/{SessionType.RACE}.json"
         formatted_data = format_race_data(data=data)
     elif session == SessionType.SPRINT.url_value:
-        output_file_path = f"data/{year}/round_{round_number}/{SessionType.SPRINT}.json"
+        output_file_path = f"{base_output_path}/{SessionType.SPRINT}.json"
         formatted_data = format_race_data(data=data)
+    elif session == SessionType.QUALIFYING_1.url_value:
+        output_file_path = f"{base_output_path}/{SessionType.QUALIFYING_1}.json"
+        formatted_data = format_qualifying_data(data=data)
+    elif session == SessionType.QUALIFYING_2.url_value:
+        output_file_path = f"{base_output_path}/{SessionType.QUALIFYING_2}.json"
+        formatted_data = format_qualifying_data(data=data)
     else:
-        LOGGER.warning(f"Session type '{session}' is not handled. No output written.")
-        return
+        raise ValueError(f"Session type '{session}' is not recognised.")
 
     write_session_data(data=formatted_data, output_file_path=output_file_path)
     LOGGER.info(f"Session data written to {output_file_path}")
