@@ -17,7 +17,7 @@ def process_event(event: dict, year: str, session: str) -> None:
 
 if __name__ == "__main__":
     year = "2025"
-    session = "q2"
+    session = "rac"
 
     max_workers = 4
 
@@ -28,6 +28,7 @@ if __name__ == "__main__":
         futures = [
             executor.submit(process_event, event, year, session) for event in calendar
         ]
+
         for future in as_completed(futures):
             try:
                 result = future.result()
