@@ -17,13 +17,13 @@ repos:
     - id: detect-secrets
 
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.28.0
+    rev: v8.29.0
     hooks:
       - id: gitleaks
         args: [--config=./gitleaks.toml]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.1
+    rev: v0.14.4
     hooks:
     # Run the linter.
     -   id: ruff
